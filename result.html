@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Metadata Result</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+<h1>🔍 Metadata Report</h1>
+
+<h2>{{ filename }}</h2>
+
+
+{% if metadata %}
+
+<h3>Extracted Information</h3>
+
+{% for key, value in metadata.items() %}
+
+<p>
+<strong>{{ key }}</strong> : {{ value }}
+</p>
+
+{% endfor %}
+
+
+{% else %}
+
+<p>
+No metadata found.
+</p>
+
+{% endif %}
+
+
+<br>
+
+<a href="/">
+<button>Scan Another File</button>
+</a>
+
+
+</div>
+
+</body>
+
+</html>
